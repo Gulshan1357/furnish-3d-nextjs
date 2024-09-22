@@ -3,15 +3,11 @@ import localFont from 'next/font/local';
 import './globals.css';
 import { ThemeProvider } from './components/ThemeProvider';
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
+const alpino = localFont({
+  src: '../../public/fonts/Alpino-Variable.woff2',
+  display: 'swap',
   weight: '100 900',
-});
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
+  variable: '--font-alpino',
 });
 
 export const metadata: Metadata = {
@@ -26,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body
-        className={`${geistSans.className} ${geistMono.className} antialiased`}
-      >
+      <body className={`${alpino.className} antialiased`}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
