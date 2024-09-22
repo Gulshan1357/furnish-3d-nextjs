@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import { ThemeProvider } from './components/ThemeProvider';
+import Header from './components/Header';
 
 const alpino = localFont({
   src: '../../public/fonts/Alpino-Variable.woff2',
@@ -29,6 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           {children}
         </ThemeProvider>
       </body>
