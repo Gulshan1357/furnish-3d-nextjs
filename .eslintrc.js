@@ -30,6 +30,7 @@ module.exports = {
       ],
       rules: {
         'tailwindcss/classnames-order': 'off',
+        'tailwindcss/no-custom-classname': 'off',
       },
     },
   ],
