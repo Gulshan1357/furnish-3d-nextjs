@@ -11,7 +11,7 @@ export default function Highlights({}: Props) {
     <Bounded>
       <div className='text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2'>
         <Image
-          src={hero.furnitureImage}
+          src={hero.testImage}
           width={500}
           height={500}
           alt='Picture of the author'

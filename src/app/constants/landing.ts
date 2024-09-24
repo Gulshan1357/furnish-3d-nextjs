@@ -1,9 +1,11 @@
-import furnitureImg from '@/../public/images/all-cans-bunched.png';
+import testImg from '@/../public/images/all-cans-bunched.png';
+import furnitureImg from '@/../public/images/PlaceholderBackground.png';
 
 export const hero = {
   heading: 'Furnish 3D',
   subHeading: 'Revolutionalize your Home',
   furnitureImage: furnitureImg,
+  testImage: testImg,
 };
 
 export const highlights = [
