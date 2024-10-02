@@ -1,37 +1,67 @@
+'use client';
+
 import React from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import { Bounded } from '@/app/components/Bounded';
 import { hero, highlights } from '@/app/constants/landing';
 import Image from 'next/image';
 import { TextSplitter } from './TextSplitter';
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 interface Props {}
 
 export default function Highlights({}: Props) {
-  return (
-    <Bounded>
-      <div className='text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2'>
-        <Image
-          src={hero.testImage}
-          width={500}
-          height={500}
-          alt='Picture of the author'
-          className='w-full md:hidden'
-        />
+  useGSAP(() => {
+    // const scrollT1 = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: '.highlights-item',
+    //     start: 'top top',
+    //     end: 'bottom bottom',
+    //     scrub: 1.5,
+    //     markers: true,
+    //   },
+    // });
+    // scrollT1.fromTo(
+    //   '.text-side-heading',
+    //   {
+    //     opacity: 0,
+    //   },
+    //   {
+    //     opacity: 1,
+    //     overwrite: 'auto',
+    //   },
+    // );
+  });
 
-        <div className='grid'>
-          {highlights.map((item) => {
-            return (
-              <div key={item.id}>
-                <h2 className='text-side-heading text-balance text-4xl uppercase lg:text-8xl'>
-                  <TextSplitter text={item.lable} />
-                </h2>
-                <p className='text-side-body mt-4 max-w-xl text-balance text-xl font-normal'>
-                  {item.details}
-                </p>
+  return (
+    <Bounded className='highlights'>
+      <div className='w-full'>
+        {highlights.map((item) => {
+          return (
+            <div
+              key={item.id}
+              className='highlights-item flex flex-col md:h-screen'
+            >
+              <h4 className='text-side-heading text-balance text-center text-4xl lg:text-5xl'>
+                <TextSplitter text={item.lable} />
+              </h4>
+
+              <div className='grow'>
+                <Image
+                  src={hero.testImage}
+                  width={500}
+                  height={500}
+                  alt='Picture of the author'
+                  className='mx-auto my-6 object-contain md:h-full'
+                />
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </Bounded>
   );

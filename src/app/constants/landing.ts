@@ -11,18 +11,15 @@ export const hero = {
 export const highlights = [
   {
     id: '1',
-    lable: 'Shop',
-    details: 'Lorem asdlfjnadskjfnadsfkjgnakdjfnv',
+    lable: 'Select an item from the inventory',
   },
   {
     id: '2',
-    lable: 'Customize',
-    details: 'Lorem asdlfjnadskjfnadsfkjgnakdjfnv',
+    lable: 'Customize as per your needs',
   },
   {
     id: '3',
-    lable: 'Visualize in VR',
-    details: 'Lorem asdlfjnadskjfnadsfkjgnakdjfnv',
+    lable: 'Visualize your creation in VR',
   },
 ];
 

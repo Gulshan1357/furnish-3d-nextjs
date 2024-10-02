@@ -51,7 +51,7 @@ export default function Hero() {
       <div className='grid h-screen place-items-center text-clip'>
         {/* Background div */}
         <div className='hero-background absolute top-0 h-screen w-screen'>
-          <div className='absolute inset-0 bg-black opacity-30'></div>{' '}
+          <div className='absolute inset-0 bg-black opacity-30'></div>
           {/* Tint overlay */}
           <Image
             src={hero.furnitureImage}
