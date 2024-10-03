@@ -38,7 +38,7 @@ export default function Highlights({}: Props) {
   });
 
   return (
-    <Bounded className='highlights'>
+    <Bounded className='highlights py-6'>
       <div className='w-full'>
         {highlights.map((item) => {
           return (
@@ -50,13 +50,13 @@ export default function Highlights({}: Props) {
                 <TextSplitter text={item.lable} />
               </h4>
 
-              <div className='grow'>
+              <div className='overflow-hidden py-6'>
                 <Image
                   src={hero.testImage}
-                  width={500}
-                  height={500}
+                  // width={500}
+                  // height={500}
                   alt='Picture of the author'
-                  className='mx-auto my-6 object-contain md:h-full'
+                  className='h-full object-contain'
                 />
               </div>
             </div>

@@ -21,6 +21,10 @@ export const highlights = [
     id: '3',
     lable: 'Visualize your creation in VR',
   },
+  {
+    id: '4',
+    lable: 'Visualize your creation in VR',
+  },
 ];
 
 export const models = [

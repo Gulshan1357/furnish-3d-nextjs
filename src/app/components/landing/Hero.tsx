@@ -47,10 +47,10 @@ export default function Hero() {
   });
 
   return (
-    <Bounded className='hero opacity-0'>
-      <div className='grid h-screen place-items-center text-clip'>
+    <Bounded className='hero top-0 opacity-0'>
+      <div className='grid min-h-[90vh] place-items-center text-clip'>
         {/* Background div */}
-        <div className='hero-background absolute top-0 h-screen w-screen'>
+        <div className='hero-background absolute inset-y-0 w-screen border border-solid border-blue-600'>
           <div className='absolute inset-0 bg-black opacity-30'></div>
           {/* Tint overlay */}
           <Image
@@ -60,7 +60,7 @@ export default function Hero() {
           />
         </div>
         {/* Foreground content */}
-        <div className='grid auto-rows-min place-items-center text-center'>
+        <div className='grid auto-rows-min place-items-center pb-4 text-center'>
           <h1
             className='hero-header text-7xl uppercase leading-[.8] md:text-[9rem] lg:text-[13rem]'
             style={{
