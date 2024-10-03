@@ -47,10 +47,10 @@ export default function Hero() {
   });
 
   return (
-    <Bounded className='hero top-0 opacity-0'>
+    <Bounded className='hero top-0 min-h-screen opacity-0'>
       <div className='grid min-h-[90vh] place-items-center text-clip'>
         {/* Background div */}
-        <div className='hero-background absolute inset-y-0 w-screen border border-solid border-blue-600'>
+        <div className='hero-background absolute top-0 h-screen w-screen border border-solid border-blue-600'>
           <div className='absolute inset-0 bg-black opacity-30'></div>
           {/* Tint overlay */}
           <Image
