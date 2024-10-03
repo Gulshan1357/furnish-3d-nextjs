@@ -66,7 +66,7 @@ export default async function Navbar({}: Props) {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align='end'>
                   <DropdownMenuItem className='flex'>
-                    <Link className='grow' href='/inventory/cart'>
+                    <Link className='grow' href='/cart'>
                       Cart
                     </Link>
                   </DropdownMenuItem>
