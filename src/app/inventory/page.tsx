@@ -10,6 +10,9 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 import { Items } from '@/app/constants/inventory';
 import { CircleChevronRight, SquareArrowRight, View } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Drawer, DrawerTrigger } from '@/components/ui/drawer';
+import ItemDrawer from '../components/inventory/ItemDrawer';
 
 export default function InventoryIndexPage() {
   return (
@@ -26,7 +29,17 @@ export default function InventoryIndexPage() {
                 <Skeleton className='h-[125px] rounded-xl' />
               </CardContent>
               <CardFooter className='flex-row-reverse'>
-                <CircleChevronRight className='size-5' />
+                <Drawer>
+                  <DrawerTrigger>
+                    <CircleChevronRight className='size-5' />
+                  </DrawerTrigger>
+                  <ItemDrawer
+                    id={Number(item.id)}
+                    name={item.name}
+                    description={item.description}
+                    modifier={item.modifier}
+                  />
+                </Drawer>
               </CardFooter>
             </Card>
           </div>
