@@ -3,22 +3,18 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 
 import {
-  Drawer,
   DrawerClose,
   DrawerContent,
   DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger,
 } from '@/components/ui/drawer';
 
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
@@ -26,15 +22,14 @@ import {
 import { Minus, Plus, X } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-type Props = {
+interface Props {
   id: number;
   name: string;
   description: string;
   modifier: string[];
-};
+}
 
-export default function ItemDrawer({ id, name, description, modifier }: Props) {
+export default function ItemDrawer({ name, description, modifier }: Props) {
   const [quantity, setQuantity] = React.useState(0);
   const [activeModifier, setActiveModifier] = React.useState(modifier[0]);
 

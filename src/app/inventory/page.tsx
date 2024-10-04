@@ -9,8 +9,7 @@ import {
 import { Skeleton } from '@/components/ui/skeleton';
 
 import { Items } from '@/app/constants/inventory';
-import { CircleChevronRight, SquareArrowRight, View } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { CircleChevronRight } from 'lucide-react';
 import { Drawer, DrawerTrigger } from '@/components/ui/drawer';
 import ItemDrawer from '../components/inventory/ItemDrawer';
 
