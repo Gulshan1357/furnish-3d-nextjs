@@ -93,7 +93,7 @@ export default function ItemDrawer({ name, description, modifier }: Props) {
                 onClick={() => onClick(-1)}
                 disabled={quantity <= 0}
               >
-                <Minus className='h-4 w-4' />
+                <Minus className='size-4' />
                 <span className='sr-only'>Decrease</span>
               </Button>
               <div className='flex-1 text-center'>
@@ -108,11 +108,11 @@ export default function ItemDrawer({ name, description, modifier }: Props) {
                 type='button'
                 variant='outline'
                 size='icon'
-                className='h-8 w-8 shrink-0 rounded-full'
+                className='size-8 shrink-0 rounded-full'
                 onClick={() => onClick(1)}
                 disabled={quantity >= 10}
               >
-                <Plus className='h-4 w-4' />
+                <Plus className='size-4' />
                 <span className='sr-only'>Increase</span>
               </Button>
             </div>
