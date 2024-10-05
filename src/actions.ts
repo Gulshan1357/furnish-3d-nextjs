@@ -28,3 +28,39 @@ export async function CreateSavedItemAction(formData: FormData) {
 
     return redirect('/inventory');
 }
+
+export async function DeleteSavedItem(formData: FormData) {
+    const { getUser } = getKindeServerSession()
+
+    const user = await getUser();
+
+    if (!user) {
+        return redirect('api/auth/login');
+    }
+
+    const data = await prisma.savedItem.delete({
+        where: {
+            ownerId: user.id,
+            id: formData.get("savedItemId") as string
+        }
+    })
+    return redirect('/cart');
+}
+
+export async function DeleteAllSavedItem(formData: FormData) {
+    const { getUser } = getKindeServerSession()
+
+    const user = await getUser();
+
+    if (!user) {
+        return redirect('api/auth/login');
+    }
+
+    const data = await prisma.savedItem.deleteMany({
+        where: {
+            ownerId: user.id,
+        }
+    })
+    return redirect('/cart');
+
+}
