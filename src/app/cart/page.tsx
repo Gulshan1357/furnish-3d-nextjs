@@ -59,9 +59,9 @@ export default async function Cart({}: Props) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  // if (!user) {
-  //   return redirect('/api/auth/login');
-  // }
+  if (!user) {
+    return redirect('/');
+  }
 
   const { savedItems, totalItems } = await getData(user.id);
 
