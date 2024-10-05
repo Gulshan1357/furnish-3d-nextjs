@@ -45,3 +45,6 @@ export async function GET() {
     );
   }
 }
+export const config = {
+  runtime: 'edge', // Ensure this API route runs dynamically at the edge
+};
