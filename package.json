@@ -8,7 +8,8 @@
     "build:local": "prettier --write . && next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
