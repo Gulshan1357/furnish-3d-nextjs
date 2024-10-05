@@ -10,7 +10,7 @@ export async function CreateSavedItemAction(formData: FormData) {
   const user = await getUser();
 
   if (!user) {
-    return redirect('api/auth/login');
+    return redirect('/');
   }
 
   const response = await prisma.savedItem.create({
@@ -35,7 +35,7 @@ export async function DeleteSavedItem(formData: FormData) {
   const user = await getUser();
 
   if (!user) {
-    return redirect('api/auth/login');
+    return redirect('/');
   }
 
   const data = await prisma.savedItem.delete({
@@ -53,7 +53,7 @@ export async function DeleteAllSavedItem(formData: FormData) {
   const user = await getUser();
 
   if (!user) {
-    return redirect('api/auth/login');
+    return redirect('/');
   }
 
   const data = await prisma.savedItem.deleteMany({
