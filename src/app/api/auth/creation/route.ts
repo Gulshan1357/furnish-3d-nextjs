@@ -31,5 +31,9 @@ export async function GET() {
     });
   }
 
-  return NextResponse.redirect('http://localhost:3000/inventory');
+  // local
+  // return NextResponse.redirect('http://localhost:3000/inventory');
+
+  // remote
+  return NextResponse.redirect('https://furnish-3d.vercel.app/inventory');
 }
