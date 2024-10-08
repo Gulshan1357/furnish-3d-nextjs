@@ -14,6 +14,8 @@ import { Drawer, DrawerTrigger } from '@/components/ui/drawer';
 import ItemDrawer from '../components/inventory/ItemDrawer';
 import { Bounded } from '../components/Bounded';
 import Image from 'next/image';
+import { Suspense } from 'react';
+import Loading from '../components/Loading';
 
 export default function InventoryIndexPage() {
   return (
@@ -32,6 +34,7 @@ export default function InventoryIndexPage() {
                 </CardHeader>
                 <CardContent>
                   {/* <Skeleton className='h-[125px] rounded-xl' /> */}
+
                   <Image
                     src={item.gif}
                     alt='Picture of the author'

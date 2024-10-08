@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { Suspense, useRef } from 'react';
 import gsap from 'gsap';
 
 import { useGSAP } from '@gsap/react';
@@ -12,6 +12,7 @@ import { hero, highlights } from '@/app/constants/landing';
 import { TextSplitter } from '@/app/components/landing/TextSplitter';
 import WoodenChair from './WoodenChair';
 import ViewCanvas from './ViewCanvas';
+import Loading from '../Loading';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -128,7 +129,9 @@ export default function Highlights({}: Props) {
                   className='object-contain md:hidden lg:size-full'
                 />
                 <div className='hidden md:flex md:size-full md:items-center md:justify-center'>
-                  <ViewCanvas />
+                  <Suspense fallback={<Loading />}>
+                    <ViewCanvas />
+                  </Suspense>
                 </div>
               </div>
             </div>
