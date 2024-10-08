@@ -40,37 +40,37 @@ export const logos = [
     id: 1,
     name: 'Next JS',
     path: nextjsLogo,
-    link: "https://nextjs.org/"
+    link: 'https://nextjs.org/',
   },
   {
     id: 2,
     name: 'Kinde',
     path: kindeLogo,
-    link: "https://kinde.com/"
+    link: 'https://kinde.com/',
   },
   {
     id: 3,
     name: 'Prisma ORM',
     path: prismaLogo,
-    link: "https://www.prisma.io/"
+    link: 'https://www.prisma.io/',
   },
   {
     id: 4,
     name: 'Three JS',
     path: threejsLogo,
-    link: "https://threejs.org/"
+    link: 'https://threejs.org/',
   },
   {
     id: 5,
     name: 'TypeScript',
     path: typeScriptLogo,
-    link: "https://www.typescriptlang.org/"
+    link: 'https://www.typescriptlang.org/',
   },
   {
     id: 6,
     name: 'Vercel',
     path: vercelLogo,
-    link: "https://vercel.com/"
+    link: 'https://vercel.com/',
   },
 ];
 
