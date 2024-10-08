@@ -23,15 +23,22 @@ import { Minus, Plus, X } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { CreateSavedItemAction } from '@/actions';
 import { toast } from 'sonner';
+import Image, { StaticImageData } from 'next/image';
 
 interface Props {
   id: number;
   name: string;
   description: string;
   modifier: string[];
+  gif: StaticImageData;
 }
 
-export default function ItemDrawer({ name, description, modifier }: Props) {
+export default function ItemDrawer({
+  name,
+  description,
+  modifier,
+  gif,
+}: Props) {
   const [quantity, setQuantity] = React.useState(1);
   const [activeModifier, setActiveModifier] = React.useState(modifier[0]);
 
@@ -63,7 +70,12 @@ export default function ItemDrawer({ name, description, modifier }: Props) {
           </DrawerHeader>
 
           <div className='mt-3 p-4 pb-0'>
-            <Skeleton className='h-[140px] rounded-xl' />
+            {/* <Skeleton className='h-[140px] rounded-xl' /> */}
+            <Image
+              src={gif}
+              alt='Picture of the author'
+              className='object-contain lg:size-full'
+            />
           </div>
 
           <DrawerFooter>
