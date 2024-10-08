@@ -10,7 +10,6 @@ import Image from 'next/image';
 import { Bounded } from '@/app/components/Bounded';
 import { hero, highlights } from '@/app/constants/landing';
 import { TextSplitter } from '@/app/components/landing/TextSplitter';
-import ViewCanvas from '@/app/components/landing/ViewCanvas';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -69,17 +68,62 @@ export default function Highlights({}: Props) {
           return (
             <div
               key={item.id}
-              className='highlights-item flex flex-col md:h-screen'
+              className='highlights-item my-4 flex h-screen flex-col rounded-lg border p-10 shadow-2xl lg:flex-row lg:rounded-2xl'
             >
-              <h4 className='text-side-heading text-balance text-center text-4xl lg:text-5xl'>
-                <TextSplitter text={item.lable} />
-              </h4>
+              <div className='lg:flex lg:w-1/2 lg:flex-col lg:justify-center'>
+                <h3 className='text-side-heading text-balance text-center text-4xl md:text-5xl lg:text-6xl'>
+                  <TextSplitter text={item.heading} />
+                </h3>
+                <p className='mx-auto mt-4 text-center text-base font-light leading-5 tracking-tighter text-muted-foreground md:text-xl lg:text-2xl'>
+                  {item.description}
+                </p>
+              </div>
 
-              <div className='overflow-hidden py-6'>
+              <div className='grow-1 width-full relative mx-auto items-center py-12 lg:w-1/2 lg:p-0'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  version='1.1'
+                  viewBox='0 0 800 800'
+                  fill='none'
+                  className='absolute size-full blur-3xl'
+                >
+                  <defs>
+                    <filter
+                      id='bbblurry-filter'
+                      x='-100%'
+                      y='-100%'
+                      width='400%'
+                      height='400%'
+                      filterUnits='objectBoundingBox'
+                      primitiveUnits='userSpaceOnUse'
+                      colorInterpolationFilters='sRGB'
+                    >
+                      <feGaussianBlur
+                        stdDeviation='180'
+                        x='0%'
+                        y='0%'
+                        width='100%'
+                        height='100%'
+                        in='SourceGraphic'
+                        edgeMode='none'
+                        result='blur'
+                      ></feGaussianBlur>
+                    </filter>
+                  </defs>
+                  <g filter='url(#bbblurry-filter)'>
+                    <ellipse
+                      rx='150'
+                      ry='150'
+                      cx='404.76032484763573'
+                      cy='399.1256538111502'
+                      fill='var(--primary-text)'
+                    ></ellipse>
+                  </g>
+                </svg>
                 <Image
                   src={hero.testImage}
                   alt='Picture of the author'
-                  className='h-full object-contain'
+                  className='object-contain lg:size-full'
                 />
               </div>
             </div>

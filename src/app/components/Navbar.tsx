@@ -81,12 +81,13 @@ export default async function Navbar({}: Props) {
               <div>
                 <ThemeToggle />
               </div>
-              <RegisterLink>
+
+              <LoginLink className='mx-2'>
+                <Button variant='secondary'>Login</Button>
+              </LoginLink>
+              <RegisterLink className='mr-2'>
                 <Button>Register</Button>
               </RegisterLink>
-              <LoginLink>
-                <Button>Login</Button>
-              </LoginLink>
             </div>
           )}
         </div>

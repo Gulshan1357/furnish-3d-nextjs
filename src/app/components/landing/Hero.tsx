@@ -50,22 +50,26 @@ export default function Hero() {
     <Bounded className='hero top-0 min-h-screen opacity-0'>
       <div className='grid min-h-[90vh] place-items-center text-clip'>
         {/* Background div */}
-        <div className='hero-background absolute top-0 h-screen w-screen border border-solid border-blue-600'>
-          <div className='absolute inset-0 bg-black opacity-30'></div>
+        <div className='hero-background absolute top-0 h-screen w-screen'>
+          <div className='absolute inset-0 bg-secondary-foreground opacity-[0.02]'></div>
           {/* Tint overlay */}
-          <Image
-            src={hero.furnitureImage}
+          {/* <Image
+            src={hero.testImage}
             alt='Picture of the author'
             className='size-full object-cover'
-          />
+          /> */}
+          {/* TODO: Add gif/image/3dmodel? */}
         </div>
         {/* Foreground content */}
-        <div className='grid auto-rows-min place-items-center pb-4 text-center'>
+        <div className='z-10 grid h-full auto-rows-min place-items-center pt-20 text-center'>
+          <h2 className='hero-subheading text-md mb-3 rounded-full bg-primary/10 px-4 py-2 tracking-tight text-primary md:mb-6 md:text-lg lg:mb-10 lg:text-3xl'>
+            {hero.subHeading}
+          </h2>
           <h1
-            className='hero-header text-7xl uppercase leading-[.8] md:text-[9rem] lg:text-[13rem]'
-            style={{
-              color: 'var(--primary-text)',
-            }}
+            className='hero-header text-6xl uppercase leading-[.8] md:text-[6rem] lg:text-[8rem]'
+            // style={{
+            //   color: 'var(--primary-text)',
+            // }}
           >
             <TextSplitter
               text={hero.heading}
@@ -73,11 +77,11 @@ export default function Hero() {
               className='hero-header-word'
             />
           </h1>
-          <h2 className='hero-subheading mt-12 text-3xl font-semibold lg:text-6xl'>
-            {hero.subHeading}
-          </h2>
+          <p className='mx-auto mt-8 text-xl font-light tracking-tighter text-muted-foreground md:text-2xl lg:w-3/4 lg:text-3xl'>
+            {hero.description}
+          </p>
           <Button variant='default' className='hero-button mt-12 uppercase'>
-            Inventory
+            Shop Now
           </Button>
         </div>
       </div>
