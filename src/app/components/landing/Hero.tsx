@@ -17,12 +17,12 @@ export default function Hero() {
 
     introT1
       .set('.hero', { opacity: 1 })
-      .from('.hero-background', {
-        scale: 0.3,
-        opacity: 0,
-        ease: 'power4.out',
-        duration: 1.2,
-      })
+      // .from('.hero-background', {
+      //   scale: 0.3,
+      //   opacity: 0,
+      //   ease: 'power4.out',
+      //   duration: 1.2,
+      // })
       .from('.hero-header-word', {
         scale: 0.3,
         opacity: 0,
@@ -33,6 +33,14 @@ export default function Hero() {
       })
       .from(
         '.hero-subheading',
+        {
+          opacity: 0,
+          y: 30,
+        },
+        '+=.4',
+      )
+      .from(
+        '.hero-para',
         {
           opacity: 0,
           y: 30,
@@ -77,7 +85,7 @@ export default function Hero() {
               className='hero-header-word'
             />
           </h1>
-          <p className='mx-auto mt-8 text-xl font-light tracking-tighter text-muted-foreground md:text-2xl lg:w-3/4 lg:text-3xl'>
+          <p className='hero-para mx-auto mt-8 text-xl font-light tracking-tighter text-muted-foreground md:text-2xl lg:w-3/4 lg:text-3xl'>
             {hero.description}
           </p>
           <Button variant='default' className='hero-button mt-12 uppercase'>

@@ -21,8 +21,8 @@ export function Furnish3DLogo(props: SVGProps<SVGSVGElement>) {
   }
 
   if (theme == 'dark') {
-    return <Image src={darkLogo} alt='Logo' className='h-10 w-10' />;
+    return <Image src={darkLogo} alt='Logo' className='size-10' />;
   } else {
-    return <Image src={lightLogo} alt='Logo' className='h-10 w-10' />;
+    return <Image src={lightLogo} alt='Logo' className='size-10' />;
   }
 }

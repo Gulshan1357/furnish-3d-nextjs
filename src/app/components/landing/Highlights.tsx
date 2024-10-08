@@ -10,6 +10,8 @@ import Image from 'next/image';
 import { Bounded } from '@/app/components/Bounded';
 import { hero, highlights } from '@/app/constants/landing';
 import { TextSplitter } from '@/app/components/landing/TextSplitter';
+import WoodenChair from './WoodenChair';
+import ViewCanvas from './ViewCanvas';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -123,8 +125,11 @@ export default function Highlights({}: Props) {
                 <Image
                   src={hero.furnitureImage}
                   alt='Picture of the author'
-                  className='object-contain lg:size-full'
+                  className='object-contain md:hidden lg:size-full'
                 />
+                <div className='hidden md:flex md:size-full md:items-center md:justify-center'>
+                  <ViewCanvas />
+                </div>
               </div>
             </div>
           );

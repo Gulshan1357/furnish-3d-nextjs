@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useGLTF, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -61,8 +61,16 @@ export default function WoodenChair({
   ...props
 }: Props) {
   const { nodes, materials } = useGLTF('/models/chair/WoodenChair.gltf');
+  const [chairType, setChairType] = useState(type);
 
-  const textures = useTexture(texturesMap[type]);
+  const changeTexture = () => {
+    setChairType((prevType) =>
+      prevType < Object.keys(WoodenChairType).length / 2 - 1
+        ? prevType + 1
+        : WoodenChairType.original,
+    );
+  };
+  const textures = useTexture(texturesMap[chairType]);
 
   return (
     <group {...props} dispose={null} scale={scale}>
@@ -71,6 +79,8 @@ export default function WoodenChair({
         receiveShadow
         geometry={(nodes.WoodenChair as THREE.Mesh).geometry}
         rotation={[Math.PI / 2, 0, 0.5]}
+        position={[1, -30, 80]}
+        onPointerDown={changeTexture}
       >
         <meshStandardMaterial {...textures} />
       </mesh>
