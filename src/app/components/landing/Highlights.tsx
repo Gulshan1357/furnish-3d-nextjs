@@ -126,13 +126,13 @@ export default function Highlights({}: Props) {
                 <Image
                   src={hero.furnitureImage}
                   alt='Picture of the author'
-                  className='object-contain md:hidden lg:size-full'
+                  className='object-contain lg:size-full'
                 />
-                <div className='hidden md:flex md:size-full md:items-center md:justify-center'>
+                {/* <div className='hidden md:flex md:size-full md:items-center md:justify-center'>
                   <Suspense fallback={<Loading />}>
                     <ViewCanvas />
                   </Suspense>
-                </div>
+                </div> */}
               </div>
             </div>
           );
