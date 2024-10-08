@@ -21,6 +21,7 @@ export async function CreateSavedItemAction(formData: FormData) {
       name: formData.get('name') as string,
       modifier: formData.get('modifier') as string,
       quantity: Number(formData.get('quantity')),
+      imageUrl: formData.get('image') as string,
 
       // Todo: add local path of image
     },

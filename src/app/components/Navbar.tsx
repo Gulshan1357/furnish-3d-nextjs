@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { CircleUser, Store } from 'lucide-react';
+import { CircleUser, ShoppingBagIcon, Store } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import {
   DropdownMenu,
@@ -15,7 +15,9 @@ import {
   LogoutLink,
 } from '@kinde-oss/kinde-auth-nextjs/components';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
-import { Furnish3DLogo } from '@/app/components/Furnish3dLogo';
+import logo from '@/../public/logo/LogoBrown.svg';
+import Image from 'next/image';
+import { Furnish3DLogo } from './Furnish3dLogo';
 
 interface Props {}
 
@@ -24,36 +26,39 @@ export default async function Navbar({}: Props) {
   const session = await getUser();
 
   return (
-    <header className='sticky top-0 z-[100] w-full overflow-hidden'>
+    <header className='sticky top-0 z-[100] w-full overflow-hidden border-b bg-card opacity-80 shadow-2xl'>
       <div className='flex w-full items-center justify-between py-4'>
         <div className='ml-2 grow-0'>
           <Link href='/'>
-            <Furnish3DLogo className='h-10 w-20 text-sky-800' />
+            <Furnish3DLogo />
           </Link>
         </div>
 
         <div className='flex items-center'>
           {session ? (
             <div className='flex'>
-              <div>
-                <div>
-                  <Link
-                    href='/inventory'
-                    className='transition-all hover:text-primary/70'
-                  >
-                    <div className='flex items-center gap-3 rounded-lg px-3'>
-                      {/* <Store className='size-4' /> */}
-
-                      <Button variant='ghost'>
-                        <Store className='size-4' />
-                        <span className='hidden sm:ml-2 sm:inline'>
-                          Inventory
-                        </span>
-                      </Button>
-                    </div>
-                  </Link>
+              <Link
+                href='/cart'
+                className='transition-all hover:text-primary/70'
+              >
+                <div className='flex items-center gap-3 rounded-lg'>
+                  <Button variant='ghost'>
+                    <ShoppingBagIcon className='size-4' />
+                    <span className='hidden sm:ml-2 sm:inline'>Wishlist</span>
+                  </Button>
                 </div>
-              </div>
+              </Link>
+              <Link
+                href='/inventory'
+                className='transition-all hover:text-primary/70'
+              >
+                <div className='flex items-center gap-3 rounded-lg'>
+                  <Button variant='ghost'>
+                    <Store className='size-4' />
+                    <span className='hidden sm:ml-2 sm:inline'>Inventory</span>
+                  </Button>
+                </div>
+              </Link>
               <div className='sm:mx-2'>
                 <ThemeToggle />
               </div>
@@ -67,7 +72,7 @@ export default async function Navbar({}: Props) {
                 <DropdownMenuContent align='end'>
                   <DropdownMenuItem className='flex'>
                     <Link className='grow' href='/cart'>
-                      Cart
+                      Wishlist
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem className='flex'>

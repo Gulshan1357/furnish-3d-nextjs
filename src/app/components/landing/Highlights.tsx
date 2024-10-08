@@ -121,7 +121,7 @@ export default function Highlights({}: Props) {
                   </g>
                 </svg>
                 <Image
-                  src={hero.testImage}
+                  src={hero.furnitureImage}
                   alt='Picture of the author'
                   className='object-contain lg:size-full'
                 />

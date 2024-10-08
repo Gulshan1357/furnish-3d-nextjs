@@ -1,4 +1,3 @@
-import testImg from '@/../public/images/Hero.gif';
 import furnitureImg from '@/../public/images/Hero.gif';
 import nextjsLogo from '@/../public/logo/nextjs.svg';
 import kindeLogo from '@/../public/logo/kinde.svg';
@@ -13,7 +12,6 @@ export const hero = {
   description:
     'Interact with our products, change textures, and see them from every angle. Customize your furniture in real-time and visualize how it will look in your home before you make a purchase.',
   furnitureImage: furnitureImg,
-  testImage: testImg,
 };
 
 export const highlights = [
@@ -42,31 +40,37 @@ export const logos = [
     id: 1,
     name: 'Next JS',
     path: nextjsLogo,
+    link: "https://nextjs.org/"
   },
   {
     id: 2,
     name: 'Kinde',
     path: kindeLogo,
+    link: "https://kinde.com/"
   },
   {
     id: 3,
     name: 'Prisma ORM',
     path: prismaLogo,
+    link: "https://www.prisma.io/"
   },
   {
     id: 4,
     name: 'Three JS',
     path: threejsLogo,
+    link: "https://threejs.org/"
   },
   {
     id: 5,
     name: 'TypeScript',
     path: typeScriptLogo,
+    link: "https://www.typescriptlang.org/"
   },
   {
     id: 6,
     name: 'Vercel',
     path: vercelLogo,
+    link: "https://vercel.com/"
   },
 ];
 
