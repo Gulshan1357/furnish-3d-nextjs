@@ -60,7 +60,7 @@ export default function WoodenChair({
   scale = 0.015,
   ...props
 }: Props) {
-  const { nodes, materials } = useGLTF('/models/chair/WoodenChair.gltf');
+  const { nodes, materials } = useGLTF('/models/chair/WoodenChair.glb');
   const [chairType, setChairType] = useState(type);
 
   const changeTexture = () => {
