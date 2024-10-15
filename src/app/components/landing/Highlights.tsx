@@ -1,4 +1,5 @@
 'use client';
+export const dynamic = 'force-dynamic';
 
 import React, { Suspense, useRef } from 'react';
 import gsap from 'gsap';

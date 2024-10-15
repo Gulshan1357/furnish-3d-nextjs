@@ -1,5 +1,3 @@
-export const dynamic = 'force-dynamic';
-
 import prisma from '@/app/utils/db';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { NextResponse } from 'next/server';
