@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import { ThemeProvider } from '@/app/components/ThemeProvider';
-import Navbar from '@/app/components/Navbar';
 import { Toaster } from '@/components/ui/sonner';
 
 const alpino = localFont({
@@ -32,7 +31,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
           <main>{children}</main>
           <Toaster richColors closeButton />
         </ThemeProvider>
