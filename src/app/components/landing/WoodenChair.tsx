@@ -80,7 +80,7 @@ export default function WoodenChair({
         geometry={(nodes.WoodenChair as THREE.Mesh).geometry}
         rotation={[Math.PI / 2, 0, 0.5]}
         position={[1, -30, 80]}
-        // onPointerDown={changeTexture}
+        onPointerDown={changeTexture}
       >
         <meshStandardMaterial {...textures} />
       </mesh>
