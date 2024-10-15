@@ -1,8 +1,14 @@
 'use client';
+
+import dynamic from 'next/dynamic';
+
 import { Canvas } from '@react-three/fiber';
-import WoodenChair, {
-  WoodenChairType,
-} from '@/app/components/landing/WoodenChair';
+import { WoodenChairType } from '@/app/components/landing/WoodenChair';
+
+const WoodenChair = dynamic(
+  () => import('@/app/components/landing/WoodenChair'),
+  { ssr: false },
+);
 import { Environment, Float } from '@react-three/drei';
 
 interface Props {}

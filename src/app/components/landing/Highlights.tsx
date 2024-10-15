@@ -1,5 +1,4 @@
 'use client';
-export const dynamic = 'force-dynamic';
 
 import React, { Suspense, useRef } from 'react';
 import gsap from 'gsap';
@@ -7,13 +6,21 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
 import { Bounded } from '@/app/components/Bounded';
 import { hero, highlights } from '@/app/constants/landing';
 import { TextSplitter } from '@/app/components/landing/TextSplitter';
-import WoodenChair from './WoodenChair';
+// import WoodenChair from './WoodenChair';
+
+// const WoodenChair = dynamic(
+//   () => import('@/app/components/landing/WoodenChair'),
+//   { ssr: false },
+// );
+
 import ViewCanvas from './ViewCanvas';
 import Loading from '../Loading';
+// import { View } from '../canvas/View';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -84,6 +91,7 @@ export default function Highlights({}: Props) {
               </div>
 
               <div className='grow-1 width-full relative mx-auto items-center py-12 lg:w-1/2 lg:p-0'>
+                {/* Halo behind the model */}
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   version='1.1'
@@ -133,6 +141,11 @@ export default function Highlights({}: Props) {
                   <Suspense fallback={<Loading />}>
                     <ViewCanvas />
                   </Suspense>
+                  {/* <View>
+                    <Suspense fallback={<Loading />}>
+                      <WoodenChair />
+                    </Suspense>
+                  </View> */}
                 </div>
               </div>
             </div>
