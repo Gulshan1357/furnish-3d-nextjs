@@ -6,12 +6,14 @@
     "dev": "next dev",
     "build": "prettier --check . && next build",
     "build:local": "prettier --write . && next build",
+    "analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@ducanh2912/next-pwa": "^10.2.9",
     "@gsap/react": "^2.1.1",
     "@kinde-oss/kinde-auth-nextjs": "^2.3.8",
     "@prisma/client": "^5.20.0",
@@ -39,6 +41,7 @@
     "vaul": "^1.0.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.15",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -49,6 +52,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-next": "^0.0.0",
     "eslint-plugin-tailwindcss": "^3.17.4",
+    "next-transpile-modules": "^10.0.1",
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-prisma": "^5.0.0",
@@ -56,6 +60,7 @@
     "prisma": "^5.20.0",
     "r3f-perf": "^7.2.1",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "webpack": "^5.95.0"
   }
 }
