@@ -4,6 +4,7 @@ import './globals.css';
 import { ThemeProvider } from '@/app/components/ThemeProvider';
 import { Toaster } from '@/components/ui/sonner';
 import Navbar from '@/app/components/Navbar';
+import { Layout } from '@/app/components/dom/Layout';
 
 const alpino = localFont({
   src: '../../public/fonts/Alpino-Variable.woff2',
@@ -34,7 +35,9 @@ export default function RootLayout({
         >
           <Navbar />
 
-          <main>{children}</main>
+          <main>
+            <Layout>{children}</Layout>
+          </main>
           <Toaster richColors closeButton />
         </ThemeProvider>
       </body>

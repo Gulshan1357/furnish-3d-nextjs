@@ -13,14 +13,14 @@ import { hero, highlights } from '@/app/constants/landing';
 import { TextSplitter } from '@/app/components/landing/TextSplitter';
 // import WoodenChair from './WoodenChair';
 
-// const WoodenChair = dynamic(
-//   () => import('@/app/components/landing/WoodenChair'),
-//   { ssr: false },
-// );
+const WoodenChair = dynamic(
+  () => import('@/app/components/landing/WoodenChair'),
+  { ssr: false },
+);
 
 import ViewCanvas from './ViewCanvas';
 import Loading from '../Loading';
-// import { View } from '../canvas/View';
+import { View } from '@/app/components/canvas/View';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -138,14 +138,14 @@ export default function Highlights({}: Props) {
                   className='object-contain md:hidden lg:size-full'
                 />
                 <div className='hidden md:flex md:size-full md:items-center md:justify-center'>
-                  <Suspense fallback={<Loading />}>
+                  {/* <Suspense fallback={<Loading />}>
                     <ViewCanvas />
-                  </Suspense>
-                  {/* <View>
+                  </Suspense> */}
+                  <View>
                     <Suspense fallback={<Loading />}>
                       <WoodenChair />
                     </Suspense>
-                  </View> */}
+                  </View>
                 </div>
               </div>
             </div>

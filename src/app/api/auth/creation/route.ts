@@ -9,9 +9,8 @@ export async function GET() {
     const user = await getUser();
 
     // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
-    if (!user || user === null || !user.id) {
-      throw new Error('Something went wrong');
-    }
+    if (!user || user == null || !user.id)
+      throw new Error('something went wrong with authentication' + user);
 
     let dbUser = await prisma.user.findUnique({
       where: {

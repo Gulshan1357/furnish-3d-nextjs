@@ -4,8 +4,6 @@ import React, { useRef, useState } from 'react';
 import { useGLTF, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-
 export enum WoodenChairType {
   original,
   dark,
