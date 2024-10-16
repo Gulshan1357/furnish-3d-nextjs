@@ -17,10 +17,40 @@ const WoodenChair = dynamic(
   () => import('@/app/components/landing/WoodenChair'),
   { ssr: false },
 );
+import { WoodenChairType } from '@/app/components/landing/WoodenChair';
 
+import { Environment, Float } from '@react-three/drei';
 import ViewCanvas from './ViewCanvas';
 import Loading from '../Loading';
-import { View } from '@/app/components/canvas/View';
+const View = dynamic(
+  () => import('@/app/components/canvas/View').then((mod) => mod.View),
+  {
+    ssr: false,
+    loading: () => (
+      <div className='flex h-96 w-full flex-col items-center justify-center'>
+        <svg
+          className='-ml-1 mr-3 size-5 animate-spin text-black'
+          fill='none'
+          viewBox='0 0 24 24'
+        >
+          <circle
+            className='opacity-25'
+            cx='12'
+            cy='12'
+            r='10'
+            stroke='currentColor'
+            strokeWidth='4'
+          />
+          <path
+            className='opacity-75'
+            fill='currentColor'
+            d='M4 12a8 8 0 0 1 8-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 0 1 4 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
+          />
+        </svg>
+      </div>
+    ),
+  },
+);
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -90,7 +120,7 @@ export default function Highlights({}: Props) {
                 </p>
               </div>
 
-              <div className='grow-1 width-full relative mx-auto items-center py-12 lg:w-1/2 lg:p-0'>
+              <div className='grow-1 width-full relative items-center py-12 md:mx-auto lg:w-1/2 lg:p-0'>
                 {/* Halo behind the model */}
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -132,19 +162,26 @@ export default function Highlights({}: Props) {
                     ></ellipse>
                   </g>
                 </svg>
-                <Image
-                  src={hero.furnitureImage}
-                  alt='Picture of the author'
-                  className='object-contain md:hidden lg:size-full'
-                />
-                <div className='hidden md:flex md:size-full md:items-center md:justify-center'>
+
+                <div className='flex size-full items-center justify-stretch'>
                   {/* <Suspense fallback={<Loading />}>
                     <ViewCanvas />
                   </Suspense> */}
-                  <View>
-                    <Suspense fallback={<Loading />}>
-                      <WoodenChair />
-                    </Suspense>
+                  <View orbit className='relative size-full'>
+                    <Float
+                      speed={1} // Animation speed, defaults to 1
+                      rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
+                      floatIntensity={0.5} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+                      floatingRange={[-0.01, 0.01]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+                    >
+                      <Suspense fallback={null}>
+                        <WoodenChair type={WoodenChairType.sky} />
+                      </Suspense>
+                    </Float>
+                    <Environment
+                      files='hdrs/field.hdr'
+                      environmentIntensity={1.5}
+                    />
                   </View>
                 </div>
               </div>

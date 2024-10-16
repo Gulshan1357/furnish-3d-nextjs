@@ -55,7 +55,7 @@ const texturesMap = {
 
 export default function WoodenChair({
   type = WoodenChairType.original,
-  scale = 0.015,
+  scale = 0.03,
   ...props
 }: Props) {
   const { nodes, materials } = useGLTF('/models/chair/WoodenChair.glb');
