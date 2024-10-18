@@ -1,5 +1,8 @@
 ![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 
+### This project is moved to gitlab for bigger lfs storage limit:
+![https://furnish3d.vercel.app/](https://furnish3d.vercel.app/)
+
 # Furnish3D
 
 Furnish3D is a web platform that lets users view, customize, and buy furniture. It offers an immersive experience with interactive configurations of colors, materials, and sizes, enhancing online shopping through realistic 3D visualization.
